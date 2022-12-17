@@ -1,0 +1,148 @@
+*{
+    font-family: 'Poppins', sans-serif;;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/* navigation bar */
+.navbar{
+    background-color:rgba(0, 0, 0, 0.815);
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding-bottom: 5px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    transition: all 0.5s ease;
+}
+.nav-list{
+    padding: 20px 80px;
+}
+.logo{
+    color: #fff;
+    padding: 15px 0 0 10px;
+}
+.logo:hover{
+    cursor: pointer;
+}
+.nav-item{
+    display: inline;
+    padding-right: 30px;
+}
+.nav-item a,.mob-nav-list a{
+    color: #fff;
+    font-size: large;
+}
+.nav-item a:hover,.mob-nav-list a:hover{
+     color: rgb(185, 184, 184);
+}
+
+/* navbutton */
+.nav-btn{
+    display: none;
+    height: 40px;
+    width: 45px;
+    margin: 10px 20px 0 0;
+    border:none;
+    padding: 7px 0 7px 12px;
+}
+.nav-btn::after,
+.nav-btn::before{
+    content: '';
+    width: 80%;
+    height: 3px;
+    display: block;
+    background-color: #fff;
+    transition: 0.5s;
+    margin: 8px 0 0;
+    transition: 0.6s;
+}
+/* is-active toggle */
+.nav-btn.is-active::before{
+    transform: rotate(-45deg) translate(-9px,7px);
+}
+.nav-btn.is-active::after{
+    transform: rotate(45deg)translate(0px,1px);
+}
+.mob-nav.is-active{
+    top:0;
+}
+.navbar.is-active{
+    border-bottom: 2px solid rgb(105, 104, 104);
+    background-color: black;
+    
+}
+
+/* mobile-nav */
+.mob-nav{
+   background-color: black;
+   width: 100%; 
+   height: 100vh;
+   padding-top: 60px;
+   position: fixed;
+   top: -150%;
+   z-index: 99;
+   transition: 0.8s;
+   display: none;
+}
+.mob-nav-list{
+    padding: 5% 5% 0 5%;
+}
+.mob-nav-item{
+    padding: 0 0 20px 0;
+}
+
+/* heater section */
+#header{
+    display: flex;
+    padding: 80px 0 40px;
+}
+.image-fluid{
+    width:900px;
+    height: 580px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-image: url('../images/img1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-fluid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1.5s ease-in;
+}
+.image-fluid img:hover{
+    transform: scale(1.02);
+}
+/* media quarey */
+@media (max-width:922px) {
+    .nav-list{
+        display: none;
+    }
+    .nav-btn{
+        display: block;
+    }
+    .mob-nav{
+        display: block;
+    }
+
+    .nav-logo{
+        padding-right: 50%;
+    }
+    #header{
+        padding-top: 65px;
+    }
+    .image-fluid{
+        width: 800px;
+        height: 400px;
+    }
+    
+}
